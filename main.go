@@ -14,6 +14,21 @@ func main() {
 		var opc string 
 		var canti int
 
+		var titulo string
+		var formato string
+		var canales string
+
+		var tituloa string
+		var formatoa string
+		var duracion string
+		
+
+		var titulov string
+		var formatov string
+		var frames string
+
+
+
 		fmt.Println("Cantidad")
 		fmt.Scanln(&canti)
 
@@ -27,75 +42,63 @@ func main() {
 		case "0":
 			
 			fmt.Println("Titulo :")
-			var titulo string
+			
 			fmt.Scanln(&titulo)
 			
 			fmt.Println("Formato :")
-			var formato string
+			
 			fmt.Scanln(&formato)
 			
 			fmt.Println("Canales :")
-			var canales string
+			
 			fmt.Scanln(&canales)
 
-			ml := multimedia.ContenidoWeb{
-				Multimedia: []multimedia.Multimedia{
-
-					multimedia.Imagen{Titulo: titulo, Formato: formato, Canales: canales},
-				},
-			}
-			fmt.Println(ml.Mostrar())
 			
-			
-
-		case "1":
+			case "1":
 			//Audio
 			fmt.Println("Titulo :")
-			var titulo string
-			fmt.Scanln(&titulo)
+			fmt.Scanln(&tituloa)
 			
 			fmt.Println("Formato :")
-			var formato string
-			fmt.Scanln(&formato)
+			
+			fmt.Scanln(&formatoa)
 			
 			fmt.Println("Duracion :")
-			var duracion string
+			
 			fmt.Scanln(&duracion)
 
-			ml := multimedia.ContenidoWeb{
-				Multimedia: []multimedia.Multimedia{
-
-					multimedia.Audio{Titulo: titulo, Formato: formato, Duracion: duracion},
-				},
-			}
-			fmt.Println(ml.Mostrar())
+			
 			
 			
 
 		case "2":
 			//Video
 			fmt.Println("Titulo :")
-			var titulo string
-			fmt.Scanln(&titulo)
+			
+			fmt.Scanln(&titulov)
 			
 			fmt.Println("Formato :")
-			var formato string
-			fmt.Scanln(&formato)
+			
+			fmt.Scanln(&formatov)
 			
 			fmt.Println("Frames :")
-			var  frames string
+		
 			fmt.Scanln(&frames)
 
-			ml := multimedia.ContenidoWeb{
-				Multimedia: []multimedia.Multimedia{
-
-					multimedia.Video{Titulo: titulo, Formato: formato, Frames: frames},
-				},
-			}
 			
-			fmt.Println(ml.Mostrar())
 			
 		}
+		
+		ml := multimedia.ContenidoWeb{
+			Multimedia: []multimedia.Multimedia{
+				
+				multimedia.Imagen{Titulo: titulo, Formato: formato, Canales: canales},
+				multimedia.Audio{Titulo: tituloa, Formato: formatoa, Duracion: duracion},
+				multimedia.Video{Titulo: titulov, Formato: formatov, Frames: frames},
+			},
+		}
+		
+		fmt.Println(ml.Mostrar())
 		
 		
 		

@@ -7,9 +7,12 @@ type ContenidoWeb struct {
 }
 
 func (ml ContenidoWeb) Mostrar() string {
-	var temp string = ""
+	var temp string 
 	for _, f := range ml.Multimedia {
+		
 		fmt.Println(f.Mostrar())
+		
+		
 	}
 	return temp
 }
